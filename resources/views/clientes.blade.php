@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
             
         <H2>Cadastrar clientes:</H2>
         
-        <form action="" method="post">
+        <form method="post">
             {{csrf_field()}}
             <p><input name="NOME" type="text" placeholder="Nome..."></p>
             <p><input name="EMAIL" type="text" placeholder="Email..."></p>

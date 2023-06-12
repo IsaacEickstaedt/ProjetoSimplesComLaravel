@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AtualizarClienteController;
 use App\Http\Controllers\ClientesController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', 'ClientesController::index');
 Route::get('/', [ClientesController::class, 'index']);
+Route::get('/AtualizarCadastro/{id}', [AtualizarClienteController::class, 'carregarcliente']);
+Route::post('/AtualizarCadastro/{id}/Carregando', [AtualizarClienteController::class, 'CadastrarAlteracoes']);
+Route::get('/{id}/Excluir', [ClientesController::class, 'excluir']);
 Route::get('/{id}', [ClientesController::class, 'getIdCliente']);
 Route::post('/', [ClientesController::class, 'salvar']);
+

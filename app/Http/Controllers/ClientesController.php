@@ -16,14 +16,19 @@
             }
 
             public function salvar(Request $request){
-                $data = [ 
-                    $NOME = $request->input("NOME"),
-                    $EMAIL = $request->input("EMAIL")
-                ];
-                $clientes = new Clientes();
-                $clientes->NOME = $NOME;
-                $clientes->EMAIL = $EMAIL;
-                $clientes->save();
+                if ($request->has('NOME')) {
+                    $nome = $request->input('NOME');
+                    $email = $request->input('EMAIL');
+                    $clientes = new  Clientes();
+                    $clientes->NOME = $nome;
+                    $clientes->EMAIL = $email;
+                    $clientes->save();
+                    return redirect('/');
+                }
+            }
+
+            public function excluir($id){
+                Clientes::where('ID', '=', $id)->delete();
                 return redirect('/');
             }
         }

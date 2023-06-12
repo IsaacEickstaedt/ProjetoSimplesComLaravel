@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +14,8 @@
             <H2>Informações do Cliente:</H2>
             <p><label>Nome: {{$infosCliente->NOME}}</label></p>
             <p><label>Email: {{$infosCliente->EMAIL}}</label></p>
-            <button type="button" class="btn btn-secondary">Alterar Informações</button>
-            <button type="button" class="btn btn-danger"><a href="/">Excluir Cliente</a></button>
+            <a href="AtualizarCadastro/{{$infosCliente->ID}}"><button type="button" class="btn btn-secondary">Alterar Informações</button></a>
+            <a href="{{$infosCliente->ID}}/Excluir"><button type="button" class="btn btn-danger">Alterar Informações</button></a>
         </center></div>
     </body>
 </html>
